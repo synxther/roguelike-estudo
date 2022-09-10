@@ -1,6 +1,6 @@
 # DOCUMENTAÇÃO DO ROGUELIKE PARA ESTUDO
 
-<strong>Projeto criado em POO  <a href="https://github.com/kleberandrade/roguelike-dart" FORK DO ROGUELIKE TUTORIAL MEDIUM</a> </strong>
+<strong>Projeto criado em POO  <a href="https://github.com/kleberandrade/roguelike-dart">FORK DO ROGUELIKE TUTORIAL MEDIUM</a> </strong>
 <br />
 <cite>F. Magno e Eduardo</cite>
 
@@ -39,8 +39,14 @@ Ponto2D.zero() {
 <h2>Etapa 2: Entidade</h2>
 
 <p>Essa classe terá uma posição(onde ele está nesse momento) e um simbolo(representação visual do personagem).
-O simbolo vai ser um String onde será representado por um ASCII (Exemplo:#)
+O simbolo vai ser um String onde será representado por um ASCII (Exemplo:#).
+Posicao irá representar o ponto2d, ou seja, a posição atual de cada objeto no mundo
 
+ele terá o construtor padrão para inicializar os atributos posição e simbolo
+
+usamos novamente um override para indicar que queremos sobrescrever o método/objeto
+
+abrindo uma função toString para retornar o valor do simbolo.
 </p>
 
 
