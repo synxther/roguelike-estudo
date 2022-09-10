@@ -108,8 +108,41 @@ e apos a cada movimento será incrementado nos passos do jogador;
 
 </p>
 
+---
+
+<h2>Etapa 6: Criatura</h2>
+<p>
+
+As criaturas são os objetos no jogo que apresentaram perigo para o jogador podendo dar dano e se o jogador estiver com apenas uma vida, mata-lo.
+
+Primeiro definiremos os atributos dela diferente do jogador, onde nós podemos movimenta-lo, as criaturas irão se mover por si só de forma aleatória, por essa razão, os movimentos da criatura seram assimilados a números e por nunca mudarem serão static:
+
+```dart
+static final int FICAR_PARADO           = 0;
+static final int MOVER_BAIXO            = 1;
+static final int MOVER_CIMA             = 2;
+static final int MOVER_DIREITA          = 3;
+static final int MOVER_ESQUERDA         = 4;
+```
+
+para as criaturas caminharem de forma aleatória importaremos o dart:math; criamos uma variável Random privada _aleatorio;
+
+no super construtor especificaremos que o iniciará com um valor null, porem tá ação é opcional podendo passar o parâmetro vazio;( n entendi bem)
+
+aqui usaremos novamente o método abstrato atualizar, iniciando com uma variável direção que pegará o _aleatorio q irá até o numero 1000 e será dividido pela quantidade de movimentos sendo que nesta parte nos focaremos no resto da divisão por 5. 
+
+para haver a movimentação teremos o switch case que estará relacionado ao resto da divisão ( 0, 1, 2, 3 e 4)
+
+</p>
+
+---
+
+<h2>Etapa 7: Mundo</h2>
+<p>
 
 
+
+</p>
 
 
 -----
