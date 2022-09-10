@@ -3,8 +3,6 @@
 <strong>Projeto criado em POO  <a text-decoration="none" href="https://github.com/kleberandrade/roguelike-dart">FORK DO ROGUELIKE TUTORIAL MEDIUM</a> </strong>
 <br />
 <cite>F. Magno e Eduardo</cite>
-
----
 <br />
 <h1>ETAPAS DO PROJETO:</h1>
 <h2>Etapa 0: escopo do projeto</h2> 
