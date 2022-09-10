@@ -129,7 +129,7 @@ e apos a cada movimento será incrementado nos passos do jogador;
 
 <h3 >Antes:</h3>
 
-```dart 
+```python
 
 /// CODIGO ORIGINAL
       static final String TECLA_CIMA = "W";
@@ -226,7 +226,7 @@ var direcao = _aleatorio.nextInt(1000) % 5;
       mover(mundo, -1, 0);
       break;
     }
-    
+
 ```
 
 
