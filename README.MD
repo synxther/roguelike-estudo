@@ -62,6 +62,7 @@ o true será responsável pelos bloqueios(#) enquanto o false será responsávei
 
 Depois será usado um construtor padrão para inicializar o atributo bloqueado e depois um super construtor para inicializar os atributos posição e simbolo que são de entidade, classe pai de celula.
 </p>
+
 ---
 
 <h2>Etapa 4: Personagem</h2>
