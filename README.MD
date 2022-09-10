@@ -116,11 +116,16 @@ e apos a cada movimento será incrementado nos passos do jogador;
 
 -----
 # Alterações
+<h3>Indices:</h3>
+<ul>
+      <li> <strong><a href="#jogador">Jogador.dart</a>:</strong> 
+      Para o sistema de movimento do player tem como trocar o if else por um switch case fazendo isso tem como tirar os atributos static final TECLA_DIREITA,ESQUERDA,CIMA E BAIXO, além das linhas que o if pegava, fazendo isso, aparentemente o joguinho para de dar glitch quando você tecla muito rápido.</li>
+      <li> <strong><a href="#criatura">criatura.dart</a>:</strong> Na classe criatura podemos retirar a QUANTIDADE_MOVIMENTOS e na variável direção usar var direcao = _aleatorio.nextInt(1000) % 5.</li>
+      <li> <strong><a href="#criatura">criatura.dart</a>:</strong> O sistema de criatura de foi trocado de if and else por switch case assim economizando/limpando 15 linhas de código.</li>	
+      	
+</ul>
 
-* <strong><a href="#teste">Jogador.dart</a>:</strong> 
-Para o sistema de movimento do player tem como trocar o if else por um switch case fazendo isso tem como tirar os atributos static final TECLA_DIREITA,ESQUERDA,CIMA E BAIXO, além das linhas que o if pegava, fazendo isso, aparentemente o joguinho para de dar glitch quando você tecla muito rápido.
-
-<h2 id="teste"> Arquivo jogador.dart</h2>
+<h2 id="jogador"> Arquivo jogador.dart</h2>
 
 <h3 >Antes:</h3>
 
@@ -165,7 +170,8 @@ static final String TECLA_ESQUERDA = "A";
     }
 ```
 ---
-<h2> Arquivo criatura.dart</h2>
+
+<h2 id="criatura> Arquivo criatura.dart</h2>
 
 <h3>Antes:</h3>
 
@@ -177,6 +183,9 @@ static final int MOVER_CIMA = 2;
 static final int MOVER_DIREITA = 3;
 static final int MOVER_ESQUERDA = 4;
 static final int QUANTIDADE_MOVIMENTOS = 5;  
+
+    var direcao = _aleatorio.nextInt(1000) % QUANTIDADE_MOVIMENTOS;
+
 
       if (direcao == FICAR_PARADO) {
             mover(mundo, 0, 0);
