@@ -127,7 +127,7 @@ Para o sistema de movimento do player tem como trocar o if else por um switch ca
 
 <h2 id="jogador">Jogador.dart</h2>
 
-<h2>Antes</h2>
+<h3>Antes</h3>
 
 ```dart 
   static final String TECLA_CIMA = "W";
@@ -145,3 +145,76 @@ Para o sistema de movimento do player tem como trocar o if else por um switch ca
 
 ```
 
+<h3>Depois</h3>
+
+```dart 
+
+switch(entrada) {
+      case "D":
+      mover(mundo, 1, 0);
+      break;
+      case "A":
+      mover(mundo, -1, 0);
+      break;
+      case "W":
+      mover(mundo, 0, -1);
+      break;
+      case "S": 
+      mover(mundo, 0, 1);
+      break;
+
+      default:
+      print("valor invalido tente novamente");
+      // o jogo tem um bug que ao apertar enter sem andar ele conta como passos msm que eu n ande para isso adcionamos um default com a seguinte linha
+      passos--;
+
+```
+
+<h2 id="criatura">Criatura.dart</h2>
+
+<h3>Antes:</h3>
+
+```dart
+  static final int FICAR_PARADO = 0;
+  static final int MOVER_BAIXO = 1;
+  static final int MOVER_CIMA = 2;
+  static final int MOVER_DIREITA = 3;
+  static final int MOVER_ESQUERDA = 4;
+  static final int QUANTIDADE_MOVIMENTOS = 5
+  
+    if (direcao == FICAR_PARADO) {
+      mover(mundo, 0, 0);
+    } else if (direcao == MOVER_BAIXO) {
+      mover(mundo, 0, 1);
+    } else if (direcao == MOVER_CIMA) {
+      mover(mundo, 0, -1);
+    } else if (direcao == MOVER_DIREITA) {
+      mover(mundo, 1, 0);
+    } else if (direcao == MOVER_ESQUERDA) mover(mundo, -1, 0);
+
+```
+
+<h3>Depois</h3>
+
+```dart 
+      var direcao = _aleatorio.nextInt(1000) % 5;
+
+
+      switch(direcao) {
+      case 0:
+      mover(mundo, 0, 0);
+      break;
+      case 1:
+      mover(mundo, 0, 1);
+      break;
+      case 2: 
+      mover(mundo, 0, -1);
+      break;
+      case 3:
+      mover(mundo, 1, 0);
+      break;
+      case 4: 
+      mover(mundo, -1, 0);
+      break;
+
+``` 
