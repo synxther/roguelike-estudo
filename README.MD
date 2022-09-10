@@ -1,6 +1,6 @@
 # DOCUMENTAÇÃO DO ROGUELIKE PARA ESTUDO
 
-<strong>Projeto criado em POO <a href="https://github.com/kleberandrade/roguelike-dart"> FORK DO ROGUELIKE TUTORIAL MEDIUM</a> </strong>
+<strong>Projeto criado em POO <a style=" text-decoration: none" href="https://github.com/kleberandrade/roguelike-dart"> FORK DO ROGUELIKE TUTORIAL MEDIUM</a> </strong>
 <br />
 <cite>F. Magno e Eduardo</cite>
 
@@ -24,6 +24,14 @@ Que será responsável por armazenar o eixo X e Y do projeto.
 </p>
 <p> Após os atributos serem definidos partiremos para a criação do construtor que será responsável por criar o objeto a partir do que é passado,
 
+Com o atributo nomeado é definido os valores do parâmetros o valor começará em zero e apos começar os movimentos no mapa eles iram se alterá :
+
+```dart 
+Ponto2D.zero() {
+    this.x = this.y = 0;
+}
+
+```
 </p>
 
 
@@ -48,7 +56,7 @@ Que será responsável por armazenar o eixo X e Y do projeto.
 <h3>Antes:</h3>
 
 ```dart
-
+/// CODIGO ORIGINAL
 static final String TECLA_CIMA = "W";
 static final String TECLA_BAIXO = "S";
 static final String TECLA_DIREITA = "D";
@@ -94,6 +102,7 @@ static final String TECLA_ESQUERDA = "A";
 <h3>Antes:</h3>
 
 ```dart 
+/// CÓDIGO ORIGINAL
 static final int FICAR_PARADO = 0;
 static final int MOVER_BAIXO = 1;
 static final int MOVER_CIMA = 2;
@@ -138,3 +147,5 @@ var direcao = _aleatorio.nextInt(1000) % 5;
       break;
     }
 ```
+
+
