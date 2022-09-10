@@ -148,9 +148,6 @@ e apos a cada movimento será incrementado nos passos do jogador;
 
 ```
 
-
-```
-
 <h3>Depois:</h3>
 
 ```dart
@@ -180,6 +177,7 @@ e apos a cada movimento será incrementado nos passos do jogador;
 <h3>Antes:</h3>
 
 ```dart 
+
 /// CÓDIGO ORIGINAL
 static final int FICAR_PARADO = 0;
 static final int MOVER_BAIXO = 1;
@@ -208,6 +206,7 @@ static final int QUANTIDADE_MOVIMENTOS = 5;
 <h3>Depois:</h3>
 
 ```dart
+
 var direcao = _aleatorio.nextInt(1000) % 5;
 
  switch(direcao) {
@@ -227,6 +226,7 @@ var direcao = _aleatorio.nextInt(1000) % 5;
       mover(mundo, -1, 0);
       break;
     }
+    
 ```
 
 
