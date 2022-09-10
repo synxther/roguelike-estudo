@@ -76,6 +76,8 @@ criaremos uma função mover, onde terá uma condição if para se o bloqueado f
 mundo === local que está no mundo atual( @mundo: mundo em que o personagem esta no momento)
 </p>
 
+---
+
 <h2>Etapa 5: Jogador</h2>
 <p>
 a classe jogador é uma extensão de personagem(no caso uma herança)
@@ -115,9 +117,12 @@ e apos a cada movimento será incrementado nos passos do jogador;
 -----
 # Alterações
 
-<h2> Arquivo jogador.dart</h2>
+* <strong><a href="#teste">Jogador.dart</a>:</strong> 
+Para o sistema de movimento do player tem como trocar o if else por um switch case fazendo isso tem como tirar os atributos static final TECLA_DIREITA,ESQUERDA,CIMA E BAIXO, além das linhas que o if pegava, fazendo isso, aparentemente o joguinho para de dar glitch quando você tecla muito rápido.
 
-<h3>Antes:</h3>
+<h2 id="teste"> Arquivo jogador.dart</h2>
+
+<h3 >Antes:</h3>
 
 ```dart
 /// CODIGO ORIGINAL
@@ -138,7 +143,6 @@ static final String TECLA_ESQUERDA = "A";
 ```
 
 <h3>Depois:</h3>
-
 
 ```dart
  switch(entrada) {
