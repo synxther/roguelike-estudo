@@ -127,7 +127,7 @@ Para o sistema de movimento do player tem como trocar o if else por um switch ca
 
 <h2 id="jogador">Jogador.dart</h2>
 
-<h3>Antes</h3>
+<h3>Antes:</h3>
 
 ```dart 
   static final String TECLA_CIMA = "W";
@@ -145,7 +145,7 @@ Para o sistema de movimento do player tem como trocar o if else por um switch ca
 
 ```
 
-<h3>Depois</h3>
+<h3>Depois:</h3>
 
 ```dart 
 
@@ -194,7 +194,7 @@ switch(entrada) {
 
 ```
 
-<h3>Depois</h3>
+<h3>Depois:</h3>
 
 ```dart 
       var direcao = _aleatorio.nextInt(1000) % 5;
