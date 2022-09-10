@@ -1,6 +1,6 @@
 # DOCUMENTAÇÃO DO ROGUELIKE PARA ESTUDO
 
-<strong>Projeto criado em POO <a style=" text-decoration: none" href="https://github.com/kleberandrade/roguelike-dart"> FORK DO ROGUELIKE TUTORIAL MEDIUM</a> </strong>
+<strong>Projeto criado em POO  href="https://github.com/kleberandrade/roguelike-dart"> FORK DO ROGUELIKE TUTORIAL MEDIUM</a> </strong>
 <br />
 <cite>F. Magno e Eduardo</cite>
 
@@ -34,7 +34,14 @@ Ponto2D.zero() {
 ```
 </p>
 
+<p>Usamos o override para indicar que queremos sobrescrever o método/objeto, abrindo uma função toString para retornar os valores dos atributos x e y , assim criando a forma dos objetos no mapa.</p>
 
+<h2>Etapa 2: Entidade</h2>
+
+<p>Essa classe terá uma posição(onde ele está nesse momento) e um simbolo(representação visual do personagem).
+O simbolo vai ser um String onde será representado por um ASCII (Exemplo:#)
+
+</p>
 
 
 
