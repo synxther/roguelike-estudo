@@ -186,7 +186,7 @@ static final int MOVER_DIREITA = 3;
 static final int MOVER_ESQUERDA = 4;
 static final int QUANTIDADE_MOVIMENTOS = 5;  
 
-    var direcao = _aleatorio.nextInt(1000) % QUANTIDADE_MOVIMENTOS;
+
 
 
       if (direcao == FICAR_PARADO) {
