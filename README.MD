@@ -1,6 +1,6 @@
 # DOCUMENTAÇÃO DO ROGUELIKE PARA ESTUDO
 
-<strong>Projeto criado em POO  <a href="https://github.com/kleberandrade/roguelike-dart">FORK DO ROGUELIKE TUTORIAL MEDIUM</a> </strong>
+<strong>Projeto criado em POO  <a text-decoration="none" href="https://github.com/kleberandrade/roguelike-dart">FORK DO ROGUELIKE TUTORIAL MEDIUM</a> </strong>
 <br />
 <cite>F. Magno e Eduardo</cite>
 
