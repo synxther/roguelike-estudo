@@ -249,3 +249,13 @@ switch(entrada) {
       break;
 
 ``` 
+
+<h2>Observações:</h2>
+
+<p>
+
+* Super construtores => supostamente o ":" rodará antes do construtor em si, para só assim após  poder atribuir valores ao personagem;
+* entidade tem um atributo que tem que tem acesso ao Ponto2D por meio do atributo (Ponto2D posição) EX: posicao.x;
+
+* o método mover jogará os valores para a classe personagem q rodará o if. 
+</p>
