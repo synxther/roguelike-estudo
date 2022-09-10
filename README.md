@@ -116,117 +116,39 @@ e apos a cada movimento será incrementado nos passos do jogador;
 
 -----
 # Alterações
+
 <h3>Indices:</h3>
 <ul>
       <li> <strong><a href="#jogador">Jogador.dart</a>:</strong> 
       Para o sistema de movimento do player tem como trocar o if else por um switch case fazendo isso tem como tirar os atributos static final TECLA_DIREITA,ESQUERDA,CIMA E BAIXO, além das linhas que o if pegava, fazendo isso, aparentemente o joguinho para de dar glitch quando você tecla muito rápido.</li>
       <li> <strong><a href="#criatura">criatura.dart</a>:</strong> Na classe criatura podemos retirar a QUANTIDADE_MOVIMENTOS e na variável direção usar var direcao = _aleatorio.nextInt(1000) % 5.</li>
       <li> <strong><a href="#criatura">criatura.dart</a>:</strong> O sistema de criatura de foi trocado de if and else por switch case assim economizando/limpando 15 linhas de código.</li>	
-      	
 </ul>
 
+* <strong><a href="#teste">Jogador.dart</a>:</strong> 
+Para o sistema de movimento do player tem como trocar o if else por um switch case fazendo isso tem como tirar os atributos static final TECLA_DIREITA,ESQUERDA,CIMA E BAIXO, além das linhas que o if pegava, fazendo isso, aparentemente o joguinho para de dar glitch quando você tecla muito rápido.
+
+<h2 id="teste"> Arquivo jogador.dart</h2>
 <h2 id="jogador"> Arquivo jogador.dart</h2>
 
 <h3 >Antes:</h3>
 
-```dart
-
-/// CODIGO ORIGINAL
-      static final String TECLA_CIMA = "W";
-      static final String TECLA_BAIXO = "S";
-      static final String TECLA_DIREITA = "D";
-      static final String TECLA_ESQUERDA = "A";
-
-    // Verifica se o jogador digitou WASD para move-lo
-    if (entrada == TECLA_DIREITA) {
-      mover(mundo, 1, 0);
-    } else if (entrada == TECLA_ESQUERDA) {
-      mover(mundo, -1, 0);
-    } else if (entrada == TECLA_CIMA) {
-      mover(mundo, 0, -1);
-    } else if (entrada == TECLA_BAIXO) mover(mundo, 0, 1);
-
-```
-
-<h3>Depois:</h3>
-
-```dart
- switch(entrada) {
-      case "D":
-      mover(mundo, 1, 0);
-      break;
-      case "A":
-      mover(mundo, -1, 0);
-      break;
-      case "W":
-      mover(mundo, 0, -1);
-      break;
-      case "S": 
-      mover(mundo, 0, 1);
-      break;
-
-      default:
-      print("valor invalido tente novamente");
-      passos--;
+@@ -165,7 +170,8 @@ static final String TECLA_ESQUERDA = "A";
     }
 ```
 ---
+<h2> Arquivo criatura.dart</h2>
 
 <h2 id="criatura> Arquivo criatura.dart</h2>
 
 <h3>Antes:</h3>
 
-```dart 
-
-/// CÓDIGO ORIGINAL
-static final int FICAR_PARADO = 0;
-static final int MOVER_BAIXO = 1;
-static final int MOVER_CIMA = 2;
-static final int MOVER_DIREITA = 3;
+@@ -178,6 +184,9 @@ static final int MOVER_DIREITA = 3;
 static final int MOVER_ESQUERDA = 4;
 static final int QUANTIDADE_MOVIMENTOS = 5;  
-
-
-
-
+    var direcao = _aleatorio.nextInt(1000) % QUANTIDADE_MOVIMENTOS;
       if (direcao == FICAR_PARADO) {
             mover(mundo, 0, 0);
       } else if (direcao == MOVER_BAIXO) {
-            mover(mundo, 0, 1);
-      } else if (direcao == MOVER_CIMA) {
-            mover(mundo, 0, -1);
-      } else if (direcao == MOVER_DIREITA) {
-            mover(mundo, 1, 0);
-      } else if (direcao == MOVER_ESQUERDA) { 
-            mover(mundo, -1, 0);
-      }
-
-```
-
-<h3>Depois:</h3>
-
-```dart
-
-var direcao = _aleatorio.nextInt(1000) % 5;
-
- switch(direcao) {
-      case 0:
-      mover(mundo, 0, 0);
-      break;
-      case 1:
-      mover(mundo, 0, 1);
-      break;
-      case 2: 
-      mover(mundo, 0, -1);
-      break;
-      case 3:
-      mover(mundo, 1, 0);
-      break;
-      case 4: 
-      mover(mundo, -1, 0);
-      break;
-    }
-
-```
 
 
