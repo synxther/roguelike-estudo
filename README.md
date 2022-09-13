@@ -4,6 +4,7 @@
 <br />
 <cite>F. Magno e Eduardo Abrantes</cite>
 <br />
+<bold>Ignorem erros de ortografia e acentuação, nada aqui deve ser levado com verdade absoluta</bold>
 
 <h1>ETAPAS DO PROJETO:</h1>
 <h2>Etapa 0: escopo do projeto</h2> 
