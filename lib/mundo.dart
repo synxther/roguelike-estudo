@@ -3,6 +3,7 @@ import 'package:roguelike/criatura.dart';
 import 'package:roguelike/jogador.dart';
 import 'package:roguelike/personagem.dart';
 import 'package:roguelike/ponto_2d.dart';
+import 'package:roguelike/vida.dart';
 
 // Classe que representa o mundo do jogo
 class Mundo {
@@ -13,16 +14,17 @@ class Mundo {
   // Lista de criaturas (NPCs)
   List<Criatura> criaturas;
   // Jogador controlado
+  List<Vida> vidas;
   Jogador jogador;
 
   // Construtor padrão do mundo
   // @mapa: mapa criado de qualquer forma
   // @crituras: lista de criaturas posicionadas
-  Mundo(this.mapa, this.criaturas) {
+  Mundo(this.mapa, this.criaturas, this.vidas) {
     _largura = mapa.length;
     _altura = mapa[0].length;
   }
-  
+
   // Método que verifica se uma posição X,Y do mapa esta bloqueada ou não
   bool bloqueado(int x, int y) {
     return mapa[x][y].bloqueado;
@@ -39,16 +41,22 @@ class Mundo {
       criatura.atualizar(this);
 
       // Se a posição de uma criatura for igual a posição do jogador
+
       if (criatura.posicao.toString() == jogador.posicao.toString()) {
         // jogador toma 1 de dano (perde uma vida)
         jogador.tomarDano(1);
+      }
+    }
+    
+    for (Vida vida in vidas) {
+      if (vida.posicao.toString() == jogador.posicao.toString()) {
+        jogador.ganharVida(1);
       }
     }
   }
 
   // Método para desenhar o mundo no console
   void desenhar() {
-
     // Criar um mapa de criaturas baseado em suas posições
     Map<String, Personagem> map = Map();
     for (Criatura creature in criaturas) {
@@ -57,7 +65,7 @@ class Mundo {
 
     // Adicionamos também o jogador no mapa
     map[jogador.posicao.toString()] = jogador;
-
+  
     // Exibe informações do jogador
     print("Jogador está em [${jogador.posicao}]");
     print("Vidas: ${jogador.vidas}");
@@ -68,16 +76,20 @@ class Mundo {
       var line = "";
       // Percorre todas as colunas
       for (int x = 0; x < _largura; x++) {
-
         // SE na posição X, Y existe algo além do chão, então
         if (map[Ponto2D(x, y).toString()] != null) {
           // SE a posição tem um jogador, desenha o jogador, caso contrário desenha a criatura
-          if (map[Ponto2D(x, y).toString()].simbolo == Jogador.SIMBOLO_JOGADOR) {
+          if (map[Ponto2D(x, y).toString()].simbolo ==
+              Jogador.SIMBOLO_JOGADOR) {
             line += '\u001b[34;1m' + map[Ponto2D(x, y).toString()].toString();
+          } else if (map[Ponto2D(x, y).toString()].simbolo ==
+              Vida.SIMBOLO_VIDAS) {
+            line += '\u001b[31;1m' + map[Ponto2D(x, y).toString()].toString();
           } else {
             line += '\u001b[31;1m' + map[Ponto2D(x, y).toString()].toString();
           }
-        } else { // Desenha o mapa
+        } else {
+          // Desenha o mapa
           line += '\u001b[0m' + mapa[x][y].toString();
         }
       }

@@ -8,6 +8,7 @@ class Roguelike {
   // Constantes
   static final String SIMBOLO_PAREDE = "#";
   static final int QUANTIDADE_CRIATUDAS = 60;
+  static final int quantidadeVidas = 5;
   static final int QUANTIDADE_VIDAS = 2;
   static final double FATOR_PROFUNDIDADE = 2.0;
 
@@ -42,6 +43,7 @@ class Roguelike {
         .preencher(SIMBOLO_PAREDE, true)
         .criarCaminho(posicao.x, posicao.y, passos)
         .criarCriaturas(QUANTIDADE_CRIATUDAS)
+        .criaVidas(quantidadeVidas)
         .build();
 
     // Coloca o jogador dentro do mundo
@@ -50,7 +52,6 @@ class Roguelike {
 
   // Executa a lógica do jogo
   void executar() {
-
     // Enquanto o jogador estiver vivo
     while (_jogador.vivo()) {
       // Desenha o mundo

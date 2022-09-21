@@ -33,6 +33,10 @@ class Jogador extends Personagem {
     this._vidas -= dano;
   }
 
+  void ganharVida(int vida){
+    this._vidas += vida;
+  }
+
   // Implementação do método abstrato atualizar
   // @mundo: mundo em que o personagem esta no momento
   void atualizar(Mundo mundo) {
@@ -40,7 +44,7 @@ class Jogador extends Personagem {
         "Para mover o personagem [W/Cima - S/Baixo - A/Esquerda - D/Direita]: ");
 
     // Aguarda entrada pelo console e converte para maiusculo
-    var entrada = stdin.readLineSync().toUpperCase();
+    String entrada = stdin.readLineSync().toUpperCase();
 
     // Verifica se o jogador digitou WASD para move-lo trocamos o if and else por switch case simplismente por ficar com o codigo mais limpo e pelo o fato de a verificação é de apenas uma variavel logo o switch acaba sendo mais apropriado para o caso 
     switch(entrada) {

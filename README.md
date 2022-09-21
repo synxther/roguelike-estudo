@@ -366,6 +366,8 @@ switch(entrada) {
 - entidade tem um atributo que tem que tem acesso ao Ponto2D por meio do atributo (Ponto2D posição) EX: posicao.x;
 
 - o método mover jogará os valores para a classe personagem q rodará o if.
+
+- O static serve para encapsular a variável para que não chamada em nenhum outro local.
 </p>
 
 <h2>Duvidas:</h2>

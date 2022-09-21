@@ -103,4 +103,3 @@ MundoBuilder criaVidas(int quantidadeVidas) {
     return Mundo(mapa, criaturas, vidas);
   }
 }
-
